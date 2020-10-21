@@ -1,5 +1,6 @@
 import React from 'react';
 import { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Collapse,
   Navbar,
@@ -30,15 +31,12 @@ export default class Navi extends React.Component {
   render() {
     return <Fragment>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/">reactstrap</NavbarBrand>
+        <NavbarBrand><Link to="/">Mağaza</Link></NavbarBrand>
         <NavbarToggler onClick={this.toggle} />
         <Collapse isOpen={this.state.isOpen} navbar>
           <Nav className="ml-auto" navbar>
             <NavItem>
-              <NavLink href="/components/">Components</NavLink>
-            </NavItem>
-            <NavItem>
-              <NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
+              <NavLink><Link to="/saveProduct">Ürün Ekle</Link></NavLink>
             </NavItem>
             <CartSummary />
           </Nav>
